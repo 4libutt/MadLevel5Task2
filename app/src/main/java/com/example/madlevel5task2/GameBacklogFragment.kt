@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -23,6 +24,9 @@ class GameBacklogFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        view.findViewById<FloatingActionButton>(R.id.fabAdd).setOnClickListener {
+            findNavController().navigate(
+                R.id.action_GameBacklogFragment_to_AddGameFragment)
+        }
     }
 }

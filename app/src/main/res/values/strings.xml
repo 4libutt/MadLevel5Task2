@@ -8,4 +8,6 @@
     <string name="Year">Year</string>
     <string name="first_fragment_label">GameBacklogFragment</string>
     <string name="second_fragment_label">AddGameFragment</string>
+    <string name="GameBacklog">Game Backlog</string>
+    <string name="AddGame">Add Game</string>
 </resources>
