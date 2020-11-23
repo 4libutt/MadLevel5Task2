@@ -3,6 +3,7 @@ package com.example.madlevel5task2.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.time.LocalDate
 import java.util.*
 
 @Entity(tableName = "gameTable")
@@ -15,7 +16,7 @@ data class Game(
     var platform: String,
 
     @ColumnInfo(name = "releaseDate")
-    var releaseDate: Date,
+    var releaseDate: LocalDate,
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

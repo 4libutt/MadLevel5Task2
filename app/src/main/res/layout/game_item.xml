@@ -16,7 +16,7 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceHeadline6" />
@@ -28,14 +28,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/platform"
+                android:id="@+id/tvPlatform"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
                 android:textAlignment="textStart" />
 
             <TextView
-                android:id="@+id/date"
+                android:id="@+id/tvDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
