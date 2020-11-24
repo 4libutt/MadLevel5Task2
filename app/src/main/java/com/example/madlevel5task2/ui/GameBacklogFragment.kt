@@ -25,9 +25,14 @@ import kotlinx.android.synthetic.main.fragment_game_backlog.*
  */
 class GameBacklogFragment : Fragment() {
 
-    private val gameViewmodel: GameViewModel by viewModels()
+    private val gameViewModel: GameViewModel by viewModels()
     private val games = arrayListOf<Game>()
     private val gameAdapter = GameAdapter(games)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -52,7 +57,7 @@ class GameBacklogFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.btn_nav_icon_delete -> {
-                gameViewmodel.deleteAllGames()
+                gameViewModel.deleteAllGames()
                 gameAdapter.notifyDataSetChanged()
                 true
             }
@@ -61,7 +66,7 @@ class GameBacklogFragment : Fragment() {
     }
 
     private fun observeLiveData() {
-        gameViewmodel.gameLiveData.observe(
+        gameViewModel.gameLiveData.observe(
                 viewLifecycleOwner
         ) { liveBacklogGames: List<Game> ->
             games.clear()
@@ -103,10 +108,10 @@ class GameBacklogFragment : Fragment() {
                         getString(R.string.removed_game),
                         Snackbar.LENGTH_SHORT
                 ).setAction(getString(R.string.undo), fun(_: View) {
-                    gameViewmodel.addBacklogGame(backlogGame)
+                    gameViewModel.addBacklogGame(backlogGame)
                 })
 
-                gameViewmodel.deleteGame(backlogGame)
+                gameViewModel.deleteGame(backlogGame)
 
                 undoSnackBar.show()
             }
