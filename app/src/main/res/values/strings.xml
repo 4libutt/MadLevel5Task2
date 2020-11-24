@@ -10,4 +10,6 @@
     <string name="second_fragment_label">AddGameFragment</string>
     <string name="GameBacklog">Game Backlog</string>
     <string name="AddGame">Add Game</string>
+    <string name="removed_game">remove game</string>
+    <string name="undo">undo</string>
 </resources>
